@@ -3,6 +3,7 @@
     package="com.douib.dagger228">
 
     <application
+        android:name=".ui.main.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

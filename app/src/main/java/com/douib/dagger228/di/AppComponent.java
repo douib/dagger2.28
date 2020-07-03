@@ -3,6 +3,7 @@ package com.douib.dagger228.di;
 
 import android.app.Application;
 
+import com.douib.dagger228.ui.main.DataModule;
 import com.douib.dagger228.ui.main.MyApp;
 
 import javax.inject.Singleton;
@@ -12,7 +13,7 @@ import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 
 @Singleton
-@Component(modules = {AndroidInjectionModule.class})
+@Component(modules = {AndroidInjectionModule.class, FragmentModule.class, DataModule.class})
 public interface AppComponent {
 
     void inject(MyApp hubApp);
@@ -20,7 +21,7 @@ public interface AppComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        //Builder application(Application application);
+        Builder application(Application application);
         AppComponent build();
     }
 }
